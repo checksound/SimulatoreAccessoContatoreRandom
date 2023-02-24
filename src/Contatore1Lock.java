@@ -12,9 +12,9 @@ public class Contatore1Lock implements Contatore {
     }
 
     public void decrement() {
-        Calendar cal = new GregorianCalendar();
-        synchronized(this) {
 
+        synchronized(this) {
+            Calendar cal = new GregorianCalendar();
             System.out.format("%1$tM:%1$tS:%1$tL %2$s %3$s -------------------> ENTRATO DECREMENT()\n", cal,
                     Thread.currentThread().getName(), Request.getRequest());
 
@@ -41,9 +41,8 @@ public class Contatore1Lock implements Contatore {
 
     public int getValue() {
 
-        Calendar cal = new GregorianCalendar();
         synchronized(this) {
-
+            Calendar cal = new GregorianCalendar();
             System.out.format("%1$tM:%1$tS:%1$tL %2$s %3$s -------------------> ENTRATO GET_VALUE()\n", cal,
                     Thread.currentThread().getName(), Request.getRequest());
 
